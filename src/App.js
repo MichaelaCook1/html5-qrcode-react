@@ -3,7 +3,6 @@ import './App.css';
 import React from 'react';
 import Html5QrcodePlugin from './Html5QrcodePlugin.jsx'
 import ResultContainerPlugin from './ResultContainerPlugin.jsx'
-import HowToUse from './HowToUse.jsx'
 
 class App extends React.Component {
   constructor(props) {
@@ -18,20 +17,16 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <section className="App-section">
-          <div className="App-section-title"> Html5-qrcode React demo</div>
-          <br />
-          <br />
-          <br />
+      <div>
+        <section className = "App-section">
+          <div className = "App-section-title"> Scan Code </div>
           <Html5QrcodePlugin 
             fps={10}
             qrbox={250}
             disableFlip={false}
             qrCodeSuccessCallback={this.onNewScanResult}/>
           <ResultContainerPlugin results={this.state.decodedResults} />
-          <HowToUse />
-        </section>
+          </section>
       </div>
     );
   }
